@@ -1,3 +1,21 @@
+## 巡回セールスマン問題を解こう！
+### まず問題を正確に定式化をしましょう
+二次元ユークリッド空間上にN個の点<a href="https://www.codecogs.com/eqnedit.php?latex=P_i(x_i,y_i)_i\in&space;N" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_i(x_i,y_i)_i\in&space;N" title="P_i(x_i,y_i)_i\in N" /></a>
+が与えられます。このとき、任意の点からスタートして、全ての点を通り再びはじめの点に戻るような経路のうち、なるべく短いのものをなるべく高速に求めてください。一度通った点は二度通ることができません。
+
+以下の制約条件を用いることができます。
+- 任意の3点は三角不等式を満たす。すなわち<a href="https://www.codecogs.com/eqnedit.php?latex=d(P_i,P_j)&space;\leq&space;d(P_i,P_k)&space;&plus;&space;d(P_k,P_j)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d(P_i,P_j)&space;\leq&space;d(P_i,P_k)&space;&plus;&space;d(P_k,P_j)" title="d(P_i,P_j) \leq d(P_i,P_k) + d(P_k,P_j)" /></a>が成立します。
+- <a href="https://www.codecogs.com/eqnedit.php?latex=P_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_i" title="P_i" /></a>から<a href="https://www.codecogs.com/eqnedit.php?latex=P_j" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_j" title="P_j" /></a>の距離と<a href="https://www.codecogs.com/eqnedit.php?latex=P_j" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_j" title="P_j" /></a>から<a href="https://www.codecogs.com/eqnedit.php?latex=P_i" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P_i" title="P_i" /></a>の距離が異なることはありません。<a href="https://www.codecogs.com/eqnedit.php?latex=d(P_i,P_j)&space;=&space;d(P_j,P_i)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d(P_i,P_j)&space;=&space;d(P_j,P_i)" title="d(P_i,P_j) = d(P_j,P_i)" /></a>が常に成立します。
+
+巡回セールスマン問題は一般には、「無向完全グラフ<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>と重み関数<a href="https://www.codecogs.com/eqnedit.php?latex=c:E(G)\rightarrow&space;\mathbb{R}_&plus;" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c:E(G)\rightarrow&space;\mathbb{R}_&plus;" title="c:E(G)\rightarrow \mathbb{R}_+" /></a>が与えられて、<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>の最小重みのハミルトン閉路を求める問題」（コルテ・フィーゲン, 2009, p. 350）として定式化されます。無向完全グラフとはどの2つの点の間にも向きのない辺があるグラフのことで、ハミルトン閉路とは同じ点を2度以上通ることなく全ての点を通り、始点と終点が一致しているような閉路を指します。
+
+### とりあえずBrute Forceでやってみる
+
+
+### 参考文献
+
+
+## 以下は元のREADMEの内容です
 Build@Mercari 2020 Week4 - Travelling Salesman PRoblem Challenges.
 
 This is forked from [https://github.com/hayatoito/google-step-tsp-2016](https://github.com/hayatoito/google-step-tsp-2016).
