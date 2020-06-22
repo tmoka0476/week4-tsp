@@ -9,7 +9,7 @@
 
 巡回セールスマン問題は一般には、「無向完全グラフ<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>と重み関数<a href="https://www.codecogs.com/eqnedit.php?latex=c:E(G)\rightarrow&space;\mathbb{R}_&plus;" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c:E(G)\rightarrow&space;\mathbb{R}_&plus;" title="c:E(G)\rightarrow \mathbb{R}_+" /></a>が与えられて、<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>の最小重みのハミルトン閉路を求める問題」（コルテ・フィーゲン, 2009, p. 350）として定式化されます。無向完全グラフとはどの2つの点の間にも向きのない辺があるグラフのことで、ハミルトン閉路とは同じ点を2度以上通ることなく全ての点を通り、始点と終点が一致しているような閉路を指します。
 
-### とりあえずBrute Forceでやってみる
+### とりあえず　貪欲法で　やってみる
 
 
 ### 参考文献
