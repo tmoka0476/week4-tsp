@@ -8,12 +8,12 @@ import (
 	"../readCsv"
 )
 
-const N = 128
+const N = 5
 
 func main() {
 	p := make([][3]float64, N)
 
-	p = readCsv.Read("input_4.csv", p)
+	p = readCsv.Read("input_0.csv", p)
 
 	sumDist := 0.0
 	for i := 0; i < N-1; i++ {
@@ -21,15 +21,15 @@ func main() {
 		sumDist = sumDist + d
 	}
 
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 100000; i++ {
 		for j := 0; j < N-1; j++ {
-			for k := j + 1; k < N-1; k++ {
-				dist.Exchange(p, j, k)
+			for k := j + 1; k < N; k++ {
+				dist.Exchange(p, j, k, N)
 			}
 		}
 	}
 
-	outfile, err := os.OpenFile("solution_greedy_4.csv", os.O_RDWR|os.O_CREATE, 0666)
+	outfile, err := os.OpenFile("solution_greedy_0.csv", os.O_RDWR|os.O_CREATE, 0666)
 	if err != nil {
 		panic(err)
 	}
