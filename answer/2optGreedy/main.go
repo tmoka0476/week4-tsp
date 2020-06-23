@@ -22,12 +22,14 @@ func main() {
 
 	p = readCsv.Read(*inputfile, p)
 
+	// find the Nearest Neighbor for each point
 	sumDist := 0.0
 	for i := 0; i < N-1; i++ {
 		_, d := dist.FindNearest(p, i, N)
 		sumDist = sumDist + d
 	}
 
+	// do 2-opt improvement
 	for i := 0; i < 500; i++ {
 		for j := 0; j < N-1; j++ {
 			for k := j + 1; k < N; k++ {

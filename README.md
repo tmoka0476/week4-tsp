@@ -13,8 +13,8 @@
 
 
 ### 参考文献
-- <a href="http://home.a00.itscom.net/hatada/np/tsp/tsp_3opt01.html", target="_blank">TSPを 3-opt で解く</a>
-- <a href="https://www.cst.nihon-u.ac.jp/research/gakujutu/57/pdf/L-20.pdf", target="_blank">巡回セールスマン問題における局所探索法の提案</a>
+- <a href="http://home.a00.itscom.net/hatada/np/tsp/tsp_3opt01.html" target="_blank">TSPを 3-opt で解く</a>
+- <a href="https://www.cst.nihon-u.ac.jp/research/gakujutu/57/pdf/L-20.pdf" target="_blank">巡回セールスマン問題における局所探索法の提案</a>
 
 
 ## 以下は元のREADMEの内容です
