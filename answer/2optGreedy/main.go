@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
 
@@ -8,12 +9,18 @@ import (
 	"../readCsv"
 )
 
-const N = 5
-
 func main() {
+	var (
+		inputfile = flag.String("i", "", "input file")
+		n         = flag.Int("n", 0, "the number of data")
+		outfile   = flag.String("o", "", "output file")
+	)
+	flag.Parse()
+	N := *n
+
 	p := make([][3]float64, N)
 
-	p = readCsv.Read("input_0.csv", p)
+	p = readCsv.Read(*inputfile, p)
 
 	sumDist := 0.0
 	for i := 0; i < N-1; i++ {
@@ -21,23 +28,23 @@ func main() {
 		sumDist = sumDist + d
 	}
 
-	for i := 0; i < 100000; i++ {
+	for i := 0; i < 500; i++ {
 		for j := 0; j < N-1; j++ {
 			for k := j + 1; k < N; k++ {
-				dist.Exchange(p, j, k, N)
+				dist.Opt2(p, j, k, N)
 			}
 		}
 	}
 
-	outfile, err := os.OpenFile("solution_greedy_0.csv", os.O_RDWR|os.O_CREATE, 0666)
+	f, err := os.OpenFile(*outfile, os.O_RDWR|os.O_CREATE, 0666)
 	if err != nil {
 		panic(err)
 	}
-	defer outfile.Close()
+	defer f.Close()
 
-	fmt.Fprintln(outfile, "index")
+	fmt.Fprintln(f, "index")
 	for i, _ := range p {
-		fmt.Fprintln(outfile, p[i][0])
+		fmt.Fprintln(f, p[i][0])
 
 	}
 }

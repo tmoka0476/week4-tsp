@@ -24,7 +24,7 @@ func FindNearest(p [][3]float64, i int, N int) ([][3]float64, float64) {
 	return p, minDist
 }
 
-func Exchange(p [][3]float64, i, j, N int) {
+func Opt2(p [][3]float64, i, j, N int) {
 	var d_before, d_after float64
 	if j == (N - 1) {
 		d_before = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j][1], p[j][2], p[0][1], p[0][2])
