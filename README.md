@@ -9,9 +9,13 @@
 
 巡回セールスマン問題は一般には、「無向完全グラフ<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>と重み関数<a href="https://www.codecogs.com/eqnedit.php?latex=c:E(G)\rightarrow&space;\mathbb{R}_&plus;" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c:E(G)\rightarrow&space;\mathbb{R}_&plus;" title="c:E(G)\rightarrow \mathbb{R}_+" /></a>が与えられて、<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>の最小重みのハミルトン閉路を求める問題」（コルテ・フィーゲン, 2009, p. 350）として定式化されます。無向完全グラフとはどの2つの点の間にも向きのない辺があるグラフのことで、ハミルトン閉路とは同じ点を2度以上通ることなく全ての点を通り、始点と終点が一致しているような閉路を指します。
 
-### とりあえず　貪欲法で　やってみる
-
-
+### 結果
+|                 |  N=5  |  N=8  | N=16 | N=64 | N=128 | N=512 | N=2048|
+| ----            | ----  | ---- | ---- | ----  |----|----|----|
+| NN法のみ         |3418.10|3832.29|5449.44|10519.16|12684.06|25331.84|49892.05|
+| NN+2-opt        |3418.10|3832.29|4994.89|8970.05|11489.79|21363.60|42712.37|
+| NN+or-opt       |3418.10|3832.29|5232.96|10161.96|12597.85|24458.05|48249.46|
+| NN+2-opt+or-opt |3418.10|3832.29|4821.46|8679.78|11306.65|21208.24|41933.61|
 ### 参考文献
 - <a href="http://home.a00.itscom.net/hatada/np/tsp/tsp_3opt01.html" target="_blank">TSPを 3-opt で解く</a>
 - <a href="https://www.cst.nihon-u.ac.jp/research/gakujutu/57/pdf/L-20.pdf" target="_blank">巡回セールスマン問題における局所探索法の提案</a>

@@ -64,3 +64,15 @@ func OrOpt(p [][3]float64, i, j, N int) {
 		p[i+1] = tmp
 	}
 }
+
+func TotalDist(p [][3]float64, N int) float64 {
+	sumDist := 0.0
+	for i, _ := range p {
+		if i == (N - 1) {
+			sumDist = sumDist + Dist(p[i][1], p[i][2], p[0][1], p[0][2])
+		} else {
+			sumDist = sumDist + Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2])
+		}
+	}
+	return sumDist
+}

@@ -39,7 +39,7 @@ func main() {
 	}
 
 	// do or-opt improvement
-	for i := 0; i < 10000; i++ {
+	for i := 0; i < 500; i++ {
 		for j := 0; j < N-2; j++ {
 			for k := j + 1; k < N; k++ {
 				dist.OrOpt(p, j, k, N)
