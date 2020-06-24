@@ -46,3 +46,21 @@ func Opt2(p [][3]float64, i, j, N int) {
 		}
 	}
 }
+
+// insert j-th Point between i-th and i+1-th Points
+func OrOpt(p [][3]float64, i, j, N int) {
+	var d_bf, d_af float64
+	if j == (N - 1) {
+		d_bf = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j-1][1], p[j-1][2], p[j][1], p[j][2]) + Dist(p[0][1], p[0][2], p[j][1], p[j][2])
+		d_af = Dist(p[i][1], p[i][2], p[j][1], p[j][2]) + Dist(p[j-1][1], p[j-1][2], p[0][1], p[0][2]) + Dist(p[i+1][1], p[i+1][2], p[j][1], p[j][2])
+	} else {
+		d_bf = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j-1][1], p[j-1][2], p[j][1], p[j][2]) + Dist(p[j+1][1], p[j+1][2], p[j][1], p[j][2])
+		d_af = Dist(p[i][1], p[i][2], p[j][1], p[j][2]) + Dist(p[j-1][1], p[j-1][2], p[j+1][1], p[j+1][2]) + Dist(p[i+1][1], p[i+1][2], p[j][1], p[j][2])
+	}
+	if d_bf > d_af {
+		tmp := [3]float64{p[j][0], p[j][1], p[j][2]}
+		p = append(p[:j], p[j+1:]...)
+		p = append(p[:i+2], p[i+1:]...)
+		p[i+1] = tmp
+	}
+}

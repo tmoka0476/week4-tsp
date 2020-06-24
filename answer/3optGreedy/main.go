@@ -20,7 +20,7 @@ func main() {
 	var (
 		inputfile = flag.String("i", "", "input file")
 		n         = flag.Int("n", 0, "the number of data")
-		//outfile   = flag.String("o", "", "output file")
+		outfile   = flag.String("o", "", "output file")
 	)
 	flag.Parse()
 	N := *n
