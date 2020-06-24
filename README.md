@@ -9,10 +9,20 @@
 
 巡回セールスマン問題は一般には、「無向完全グラフ<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>と重み関数<a href="https://www.codecogs.com/eqnedit.php?latex=c:E(G)\rightarrow&space;\mathbb{R}_&plus;" target="_blank"><img src="https://latex.codecogs.com/gif.latex?c:E(G)\rightarrow&space;\mathbb{R}_&plus;" title="c:E(G)\rightarrow \mathbb{R}_+" /></a>が与えられて、<a href="https://www.codecogs.com/eqnedit.php?latex=G" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G" title="G" /></a>の最小重みのハミルトン閉路を求める問題」（コルテ・フィーゲン, 2009, p. 350）として定式化されます。無向完全グラフとはどの2つの点の間にも向きのない辺があるグラフのことで、ハミルトン閉路とは同じ点を2度以上通ることなく全ての点を通り、始点と終点が一致しているような閉路を指します。
 
+### 方法
+Nearest Neighbor法（NN）を使いました。NNは以下のアルゴリズムで表されます。  
+1. 始点Pを決める（この場合P0=0）
+2. P0から最も近い点P1探索する。
+3. P0 = P1 として、まだ訪れていない点がなくなるまで2を繰り返す  
+NNを使うとどうしても後になるほど辺のコストが高くなってしまいます。特に最後の点と始点を結ぶ辺は非常に長くなってしまいます。  
+そこで改善策として2-optとor-optを使います。
+
 ### 結果
+
+
 |                 |  N=5  |  N=8  | N=16 | N=64 | N=128 | N=512 | N=2048|
 | ----            | ----  | ---- | ---- | ----  |----|----|----|
-| NN法のみ         |3418.10|3832.29|5449.44|10519.16|12684.06|25331.84|49892.05|
+| NNのみ         |3418.10|3832.29|5449.44|10519.16|12684.06|25331.84|49892.05|
 | NN+2-opt        |3418.10|3832.29|4994.89|8970.05|11489.79|21363.60|42712.37|
 | NN+or-opt       |3418.10|3832.29|5232.96|10161.96|12597.85|24458.05|48249.46|
 | NN+2-opt+or-opt |3418.10|3832.29|4821.46|8679.78|11306.65|21208.24|41933.61|
