@@ -25,15 +25,15 @@ func FindNearest(p [][3]float64, i int, N int) ([][3]float64, float64) {
 }
 
 func Opt2(p [][3]float64, i, j, N int) {
-	var d_before, d_after float64
+	var d_bf, d_af float64
 	if j == (N - 1) {
-		d_before = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j][1], p[j][2], p[0][1], p[0][2])
-		d_after = Dist(p[i][1], p[i][2], p[j][1], p[j][2]) + Dist(p[0][1], p[0][2], p[i+1][1], p[i+1][2])
+		d_bf = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j][1], p[j][2], p[0][1], p[0][2])
+		d_af = Dist(p[i][1], p[i][2], p[j][1], p[j][2]) + Dist(p[0][1], p[0][2], p[i+1][1], p[i+1][2])
 	} else {
-		d_before = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j][1], p[j][2], p[j+1][1], p[j+1][2])
-		d_after = Dist(p[i][1], p[i][2], p[j][1], p[j][2]) + Dist(p[j+1][1], p[j+1][2], p[i+1][1], p[i+1][2])
+		d_bf = Dist(p[i][1], p[i][2], p[i+1][1], p[i+1][2]) + Dist(p[j][1], p[j][2], p[j+1][1], p[j+1][2])
+		d_af = Dist(p[i][1], p[i][2], p[j][1], p[j][2]) + Dist(p[j+1][1], p[j+1][2], p[i+1][1], p[i+1][2])
 	}
-	if d_before > d_after {
+	if d_bf > d_af {
 		n := i + 1
 		m := j
 		for {
